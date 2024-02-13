@@ -1,11 +1,11 @@
 const getRandomPokemonId = () => {
-    return Math.floor(Math.random() * 10) + 1;
+    return Math.floor(Math.random() * 898) + 1;
   };
   
   const fetchData = async () => {
     try {
       const randomPokemonId = getRandomPokemonId();
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`);
+      const response = await fetch(`/api/pokemon/${randomPokemonId}`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -29,4 +29,5 @@ const getRandomPokemonId = () => {
   };
   
   main();
+  
   
