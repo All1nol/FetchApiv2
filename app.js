@@ -1,6 +1,11 @@
-const fetchData = async () => {
+const getRandomPokemonId = () => {
+    return Math.floor(Math.random() * 10) + 1;
+  };
+  
+  const fetchData = async () => {
     try {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu');
+      const randomPokemonId = getRandomPokemonId();
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`);
       const data = await response.json();
       return data;
     } catch (error) {
